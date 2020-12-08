@@ -1,0 +1,87 @@
+{
+    "enabled": 0,
+    "action": "alert",
+    "protocol": "tcp",
+    "source_ip": "$EXTERNAL_NET",
+    "source_port": "32768:61000",
+    "direction": "->",
+    "dest_ip": "$HOME_NET",
+    "dest_port": "1024:65535",
+    "msg": "\"ET INFO SOCKSv5 IPv6 Inbound Connect Request (Linux Source)\"",
+    "symptom": "dsize:10<>23; flow:established,to_server; content:\"|05 01 00 04|\"; depth:4; threshold:type both, track by_src, count 1, seconds 900; ",
+    "metadata": [
+      "former_category MALWARE",
+      "created_at 2010_07_30, updated_at 2017_10_27"
+    ],
+    "reference": [
+      "url,handlers.sans.org/wsalusky/rants/",
+      "url,en.wikipedia.org/wiki/SOCKS",
+      "url,ss5.sourceforge.net/socks4.protocol.txt",
+      "url,ss5.sourceforge.net/socks4A.protocol.txt",
+      "url,www.ietf.org/rfc/rfc1928.txt",
+      "url,www.ietf.org/rfc/rfc1929.txt",
+      "url,www.ietf.org/rfc/rfc1961.txt",
+      "url,www.ietf.org/rfc/rfc3089.txt",
+      "url,doc.emergingthreats.net/bin/view/Main/2003285"
+    ],
+    "classtype": "protocol-command-decode",
+    "sid": "2003285",
+    "rev": "5",
+    "feed": "etpro",
+    "version": "2020-04-17_01",
+    "timestamp": "2020-04-16T21:42:47",
+    "file_name": "info.rules"
+  },
+  "fields": {
+    "timestamp": [
+      "2020-04-16T21:42:47.000Z"
+    ]
+  },
+  "sort": [
+    1587073367000
+  ]
+}
+,
+{
+    "enabled": 0,
+    "action": "alert",
+    "protocol": "tcp",
+    "source_ip": "$EXTERNAL_NET",
+    "source_port": "1024:5000",
+    "direction": "->",
+    "dest_ip": "$HOME_NET",
+    "dest_port": "1024:65535",
+    "msg": "\"ET INFO SOCKSv4 Bind Inbound (Windows Source)\"",
+    "symptom": "dsize:9<>18; flow:established,to_server; content:\"|04 02|\"; depth:2; ",
+    "metadata": [
+      "former_category MALWARE",
+      "created_at 2010_07_30, updated_at 2017_10_27"
+    ],
+    "reference": [
+      "url,handlers.sans.org/wsalusky/rants/",
+      "url,en.wikipedia.org/wiki/SOCKS",
+      "url,ss5.sourceforge.net/socks4.protocol.txt",
+      "url,ss5.sourceforge.net/socks4A.protocol.txt",
+      "url,www.ietf.org/rfc/rfc1928.txt",
+      "url,www.ietf.org/rfc/rfc1929.txt",
+      "url,www.ietf.org/rfc/rfc1961.txt",
+      "url,www.ietf.org/rfc/rfc3089.txt",
+      "url,doc.emergingthreats.net/bin/view/Main/2003288"
+    ],
+    "classtype": "protocol-command-decode",
+    "sid": "2003288",
+    "rev": "5",
+    "feed": "etpro",
+    "version": "2020-04-17_01",
+    "timestamp": "2020-04-16T21:42:47",
+    "file_name": "info.rules"
+  },
+  "fields": {
+    "timestamp": [
+      "2020-04-16T21:42:47.000Z"
+    ]
+  },
+  "sort": [
+    1587073367000
+  ]
+}

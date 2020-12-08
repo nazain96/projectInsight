@@ -1,0 +1,47 @@
+to-do-list
+
+1.Initial design : Create Front end rule
+
+2.Main data untuk analyst tgok
+	- message/signature
+	- sid
+	- hits
+	- last seen
+
+3.Function to create rules
+	- filtering
+	- searching
+	- sort
+	- field required to create rules: 1. technique name
+					  2. threat name
+					  3. threat class
+					  4. severity: dropdown
+							- critical
+							- high
+							- medium
+							- low
+
+	- generate rules will update table sid mapping
+	- ADD COLUMN state ON SID_MAP TABLE (0- ignore, 1- inactive 2- active)
+	- button update: 0- ignore, 1- inactive 2- active
+
+Ongoing:
+
+
+Completed:
+
+1.Initial design : Create Front end rule #done
+
+2.Main data untuk analyst tgok: #done
+	- rules
+	- message
+	- classtype
+
+3.Function to 
+	- create rules/bunch
+					
+	- searching
+	- filtering
+	- sort
+
+4. Create Database

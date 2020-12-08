@@ -1,0 +1,55 @@
+To-do-list: meeting 24/11/2020
+ 
+	1. Generate Rule Form: 
+		- Add severity dropdown option: 
+					- critical
+					- high
+					- medium
+					- low
+		- Add state input: (0 - ignore)
+		- Delete pending event if 0-> ignore
+		- Maintain pending event if state 1-> inactive
+
+	2. Rename Sid table -> sid_mapping
+	3. Add column on sid table : column->state:(0- ignore, 1- inactive 2- active)
+	4. Sid Mapping UI: - view all column
+			   - view related events if inactive
+			   - button to update column state: 
+				# if state to active, pending events related removed
+			   - View pending event based on sid number
+			   - Button change
+
+	5. Create Diagram Flow
+	6. Documentation
+
+Completed:
+
+1. Generate Rule Form: 
+		- Add severity dropdown option: 
+					- critical
+					- high
+					- medium
+					- low
+		- Add state input: (0 - ignore)
+		- Delete pending event if 0-> ignore
+		- Maintain pending event if state 1-> inactive
+
+2. Rename Sid table -> sid_mapping
+3. Add column on sid table : column->state:(0- ignore, 1- inactive 2- active)
+4. Sid Mapping UI: - view all column
+		   - view related events if inactive
+		   - button to update column state:
+			# if state to active, pending events related removed
+		   - View pending event based on sid number
+
+=====================================================================================
+To-do-list: meeting 30/11/2020
+
+1. Update at sid mapping page
+2. Create Documentation for previous comments:
+	- Diagram e.g ERD, FLowchart etc.
+
+========Explore=====
+#yajra datatables
+#ajax
+#angular
