@@ -27,7 +27,7 @@ class SidMappingController extends Controller
     	// return $event;
 
     	if(is_null($event)){
-    		return redirect(route('sidmapping'))->with('successMsg', 'No pending events found!');
+    		return redirect(route('sidMapping'))->with('successMsg', 'No pending events found!');
     	}
     	else{
     		return view('sid_review', compact('event'));
@@ -54,6 +54,6 @@ class SidMappingController extends Controller
 
         $sids->save();
 
-        return redirect(route('sidmapping'))->with('successMsg', 'SID State Updated!');
+        return redirect(route('sidMapping'))->with('successMsg', 'SID State Updated!');
     }
 }

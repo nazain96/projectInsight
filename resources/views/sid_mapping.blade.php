@@ -211,7 +211,7 @@
 
 	                  	<div>
 	                  		@if($sids->state == 1)
-		                  		<a style="width:130px;" class="btn btn-md warning-color" href="{{ route('sidReview', $sids->sid)}}">Review</a>
+		                  		<a style="width:130px;" class="btn btn-md warning-color " href="{{ route('sidReview', $sids->sid)}}">Review</a>
 		                  	@else
 		                  		@if($sids->state == 0)
 

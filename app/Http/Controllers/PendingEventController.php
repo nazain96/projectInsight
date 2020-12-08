@@ -19,7 +19,7 @@ class PendingEventController extends Controller
         //
         $event = Pending_Events::all();
 
-        return view('ruledesign', compact('event'));
+        return view('pending_events', compact('event'));
     }
 
     /**
@@ -123,7 +123,7 @@ class PendingEventController extends Controller
             
         }
         
-        return redirect(route('sidmapping'))->with('successMsg', 'Rules Successfully Generated');
+        return redirect(route('sidMapping'))->with('successMsg', 'Rules Successfully Generated');
     }
 
     /**

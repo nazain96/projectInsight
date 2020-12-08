@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PendingEventController@index' )->name('index');
 
-Route::post('store', 'PendingEventController@store' )->name('store');
+Route::post('store-event', 'PendingEventController@store' )->name('store');
 
-Route::get('sid-mapping', 'SidMappingController@index' )->name('sidmapping');
+Route::get('sid-mapping', 'SidMappingController@index' )->name('sidMapping');
 
 Route::get('sid-review/{sid}', 'SidMappingController@sidReview' )->name('sidReview');
 
