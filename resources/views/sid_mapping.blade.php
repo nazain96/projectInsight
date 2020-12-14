@@ -152,9 +152,9 @@
 	        <div class="view view-cascade blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
 	          <div>
-	            <button disabled type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#basicExampleModal">
+	            <!-- <button disabled type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#basicExampleModal">
 	              <i class="fas fa-columns mt-0">  Mapping Rules</i>
-	            </button>
+	            </button> -->
 
 	          </div>
 
