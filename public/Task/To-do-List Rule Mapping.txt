@@ -22,6 +22,7 @@ To-do-list: meeting 24/11/2020
 	5. Create Diagram Flow
 	6. Documentation
 
+
 Completed:
 
 1. Generate Rule Form: 
@@ -48,6 +49,18 @@ To-do-list: meeting 30/11/2020
 1. Update at sid mapping page
 2. Create Documentation for previous comments:
 	- Diagram e.g ERD, FLowchart etc.
+
+=====================================================================================
+Meeting 14/12/2020.
+
+Presentation note:
+1. System overview 
+
+
+
+
+
+
 
 ========Explore=====
 #yajra datatables

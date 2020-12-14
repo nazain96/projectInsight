@@ -193,16 +193,43 @@
 	                  	<td>
 	                    {{$sids->threat_class}}
 	                  	</td>
-	                  	<td>{{$sids->severity}}</td>
+	                  	<td><!-- {{$sids->severity}} -->
+
+	                  		@if($sids->severity == "Critical")
+	                  		 	<!-- <span class="text-danger text-uppercase font-weight-bold">{{$sids->severity}}</span>  -->
+	                  		 	<div class="badge badge-outline-danger badge-primary text-wrap" style="width: 6rem;">
+								  {{$sids->severity}}
+								</div>
+	                  		@else 
+	                  			@if($sids->severity == "High")
+	                  				<span class="text-warning text-uppercase font-weight-bold">{{$sids->severity}}</span> 
+	                  				<!-- <div class="badge badge-warning text-wrap" style="width: 6rem;">
+									  {{$sids->severity}}
+									</div> -->
+	                  			@else
+	                  				@if($sids->severity == "Medium")
+	                  				<!-- <span class="text-default text-uppercase font-weight-bold">{{$sids->severity}}</span>  -->
+	                  				<div class="badge badge-default text-wrap" style="width: 6rem;">
+									  {{$sids->severity}}
+									</div>
+	                  				@else
+	                  				<!-- <span class="text-primary text-uppercase font-weight-bold">{{$sids->severity}}</span> -->
+	                  				<div class="badge badge-primary text-wrap" style="width: 6rem;">
+									  {{$sids->severity}}
+									</div>
+	                  				@endif
+	                  			@endif
+	                  		@endif
+	                  	</td>
 	                  	<td>
 
 	                  		@if($sids->state == 0)
-	                  		 	 Ignore
+	                  		 	<span class="badge badge-pill badge-warning">Ignore</span> 
 	                  		@else 
 	                  			@if($sids->state == 1)
-	                  				Inactive
+	                  				<span class="badge badge-pill badge-danger">Inactive</span> 
 	                  			@else
-	                  				Active
+	                  				<span class="badge badge-pill badge-default">Active</span> 
 	                  			@endif
 	                  		@endif
 
@@ -211,26 +238,27 @@
 
 	                  	<div>
 	                  		@if($sids->state == 1)
-		                  		<a style="width:130px;" class="btn btn-md warning-color " href="{{ route('sidReview', $sids->sid)}}">Review</a>
+		                  		<a style="width:130px;" class="btn btn-md peach-gradient white-text" href="{{ route('sidReview', $sids->sid)}}">Review</a>
 		                  	@else
-		                  		@if($sids->state == 0)
+		                  		@if($sids->state == 0 || $sids->state == 2)
 
 									<form method="POST" action="{{ route('stateUpdate', $sids->sid) }}">
 
 	        						{{ csrf_field() }}
 									
 									<div class="dropdown">
-									<select  class="btn btn-md btn-primary dropdown-toggle px-3" name="state" id="state" class="browser-default custom-select" onchange="this.form.submit()">
-			                          <option value="" disabled selected>Update State</option>
-			                          <option value="0">0 - Ignore</option>
-			                          <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
-			                          <option value="2">2 - Active</option>
-			                        </select>
+										<select  class="btn btn-md blue-gradient dropdown-toggle px-3" name="state" id="state" class="browser-default custom-select" onchange="this.form.submit()">
+				                          <option value="" disabled selected>Update State</option>
+				                          <option value="0">0 - Ignore</option>
+				                          <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
+				                          <option value="2">2 - Active</option>
+				                        </select>
 			                    	</div>
+
 			                    	</form>
 
 		                  		@else
-		                  			<a style="width:130px;" class="btn btn-default btn-md green accent-3" href="#">Approved</a>
+		                  			<!-- <a style="width:130px;" class="btn btn-default btn-md green accent-3" href="#">Approved</a> -->
 		                  		@endif
 		                  	@endif
 	                  	</div>
