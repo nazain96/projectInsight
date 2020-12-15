@@ -65,14 +65,16 @@ class PendingEventController extends Controller
                 else{
                     $sid->state = 1;
                     $event = Pending_Events::where('sid',$checks)->first();
-                    $review = new ReviewEvents;
-                    $review->sid = $event->sid;
-                    $review->hits = $event->hits;
-                    $review->firstseen_at = $event->firstseen_at;
-                    $review->lastseen_at = $event->lastseen_at;
-                    $review->signature = $event->signature;
-                    $review->save();
-                    $events = Pending_Events::where('sid',$checks)->first()->delete();
+                    // $review = new ReviewEvents;
+                    // $review->sid = $event->sid;
+                    // $review->hits = $event->hits;
+                    // $review->firstseen_at = $event->firstseen_at;
+                    // $review->lastseen_at = $event->lastseen_at;
+                    // $review->signature = $event->signature;
+                    // $review->save();
+                    // $events = Pending_Events::where('sid',$checks)->first()->delete();
+                    $event->status = true;
+                    $event->save();
                 }
                 
 
@@ -95,27 +97,29 @@ class PendingEventController extends Controller
 
                     $event = Pending_Events::where('sid',$checks)->first();
 
-                    $review = ReviewEvents::where('sid',$checks)->first();
+                    // $review = ReviewEvents::where('sid',$checks)->first();
 
-                    if($review == null){#create new review data
-                        $review = new ReviewEvents;
-                        $review->sid = $event->sid;
-                        $review->hits = $event->hits;
-                        $review->firstseen_at = $event->firstseen_at;
-                        $review->lastseen_at = $event->lastseen_at;
-                        $review->signature = $event->signature;
-                        $review->save();
-                    }
-                    else{#update existing review data
-                        $review->sid = $event->sid;
-                        $review->hits = $event->hits;
-                        $review->firstseen_at = $event->firstseen_at;
-                        $review->lastseen_at = $event->lastseen_at;
-                        $review->signature = $event->signature;
-                        $review->save();
-                    }
+                    // if($review == null){#create new review data
+                    //     $review = new ReviewEvents;
+                    //     $review->sid = $event->sid;
+                    //     $review->hits = $event->hits;
+                    //     $review->firstseen_at = $event->firstseen_at;
+                    //     $review->lastseen_at = $event->lastseen_at;
+                    //     $review->signature = $event->signature;
+                    //     $review->save();
+                    // }
+                    // else{#update existing review data
+                    //     $review->sid = $event->sid;
+                    //     $review->hits = $event->hits;
+                    //     $review->firstseen_at = $event->firstseen_at;
+                    //     $review->lastseen_at = $event->lastseen_at;
+                    //     $review->signature = $event->signature;
+                    //     $review->save();
+                    // }
                     
-                    $events = Pending_Events::where('sid',$checks)->first()->delete();
+                    // $events = Pending_Events::where('sid',$checks)->first()->delete();
+                    $event->status = true;
+                    $event->save();
                 }
 
                 $sid->save();

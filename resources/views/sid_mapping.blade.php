@@ -179,7 +179,31 @@
 	                  	<th>Threat Name </th>
 	                  	<th>Threat Class</th>
 	                  	<th>Severity</th>
-	                  	<th>State</th>
+	                  	<th>State 
+	                  		<!-- <div class="btn-group dropup">
+		                      <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+		                        <i class="fa fa-sort" aria-hidden="true">
+		                          <span class="sr-only">Toggle Dropdown</span>
+		                        </i>
+
+		                        <div class="dropdown-menu">
+		                          <a id="active" class="dropdown-item" href="#" onclick="sortAscHits()">
+		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Active
+		                          </a>
+		                          <div class="dropdown-divider"></div>
+		                          <a class="dropdown-item" href="#" onclick="sortDescHits()">
+		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Inactive
+		                          </a>
+		                          <div class="dropdown-divider"></div>
+		                          <a class="dropdown-item" href="#" onclick="sortDescHits()">
+		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Ignore
+		                          </a>
+		                        </div>
+
+		                      </a>
+		                    </div> -->
+	                  	</th>
 	                  	<th>Action</th>
 	                </tr>
 	              </thead>
@@ -193,33 +217,33 @@
 	                  	<td>
 	                    {{$sids->threat_class}}
 	                  	</td>
-	                  	<td><!-- {{$sids->severity}} -->
+	                  	<td>{{$sids->severity}}
 
-	                  		@if($sids->severity == "Critical")
-	                  		 	<!-- <span class="text-danger text-uppercase font-weight-bold">{{$sids->severity}}</span>  -->
+	                  		<!-- @if($sids->severity == "Critical")
+	                  		 	<span class="text-danger text-uppercase font-weight-bold">{{$sids->severity}}</span> 
 	                  		 	<div class="badge badge-outline-danger badge-primary text-wrap" style="width: 6rem;">
 								  {{$sids->severity}}
 								</div>
 	                  		@else 
 	                  			@if($sids->severity == "High")
 	                  				<span class="text-warning text-uppercase font-weight-bold">{{$sids->severity}}</span> 
-	                  				<!-- <div class="badge badge-warning text-wrap" style="width: 6rem;">
+	                  				<div class="badge badge-warning text-wrap" style="width: 6rem;">
 									  {{$sids->severity}}
-									</div> -->
+									</div>
 	                  			@else
 	                  				@if($sids->severity == "Medium")
-	                  				<!-- <span class="text-default text-uppercase font-weight-bold">{{$sids->severity}}</span>  -->
+	                  				<span class="text-default text-uppercase font-weight-bold">{{$sids->severity}}</span> 
 	                  				<div class="badge badge-default text-wrap" style="width: 6rem;">
 									  {{$sids->severity}}
 									</div>
 	                  				@else
-	                  				<!-- <span class="text-primary text-uppercase font-weight-bold">{{$sids->severity}}</span> -->
+	                  				<span class="text-primary text-uppercase font-weight-bold">{{$sids->severity}}</span>
 	                  				<div class="badge badge-primary text-wrap" style="width: 6rem;">
 									  {{$sids->severity}}
 									</div>
 	                  				@endif
 	                  			@endif
-	                  		@endif
+	                  		@endif -->
 	                  	</td>
 	                  	<td>
 
@@ -247,11 +271,11 @@
 	        						{{ csrf_field() }}
 									
 									<div class="dropdown">
-										<select  class="btn btn-md blue-gradient dropdown-toggle px-3" name="state" id="state" class="browser-default custom-select" onchange="this.form.submit()">
+										<select  class="btn btn-md blue-gradient dropdown-toggle px-3" name="state" id="state" onchange="this.form.submit()">
 				                          <option value="" disabled selected>Update State</option>
-				                          <option value="0">0 - Ignore</option>
+				                          <option class="text-dark" value="0">0 - Ignore</option>
 				                          <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
-				                          <option value="2">2 - Active</option>
+				                          <option class="text-dark" value="2">2 - Active</option>
 				                        </select>
 			                    	</div>
 

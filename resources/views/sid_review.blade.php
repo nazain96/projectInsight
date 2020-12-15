@@ -397,7 +397,7 @@
                         <select name="state" id="state" class="browser-default custom-select">
                           <option value="" disabled selected>Select State</option>
                           <option value="0">0- Ignore</option>
-                          <option value="1">1- Inactive</option>
+                          <!-- <option value="1">1- Inactive</option> -->
                           <option value="2">2- Active</option>
                         </select>
                   	    </div>

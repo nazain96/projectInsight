@@ -20,6 +20,7 @@ class CreatePendingEventsTable extends Migration
             $table->timestamp('firstseen_at', 0);
             $table->timestamp('lastseen_at', 0);
             $table->string('signature', 300);
+            $table->boolean('status');
             $table->timestamps(); 
         });
     }

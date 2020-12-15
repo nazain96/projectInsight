@@ -22,7 +22,7 @@ class SidMappingController extends Controller
 
     	// $event1 = Pending_Events::where('sid', $sid)->first();
 
-    	$event = ReviewEvents::where('sid', $sid)->first();
+    	$event = Pending_Events::where('sid', $sid)->first();
 
     	// return $event;
 
@@ -46,7 +46,7 @@ class SidMappingController extends Controller
     	if($sids->state == '2' || $sids->state == '0'){
             
             $event = Pending_Events::where('sid',$sid)->delete();
-            $review = ReviewEvents::where('sid',$sid)->delete();
+            // $review = ReviewEvents::where('sid',$sid)->delete();
             // foreach ($event as $events) {
             // 	$events->delete();
             // }

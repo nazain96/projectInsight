@@ -396,6 +396,7 @@
               </thead>
               <tbody>
                 @foreach($event as $events)
+                @if($events->status == 'false')
                 <tr>
                   <td></td>
                   <td>
@@ -411,6 +412,7 @@
                     {{$events->lastseen_at}}
                   </td>
                 </tr>
+                @endif
                 @endforeach
               </tbody>
             </table>
