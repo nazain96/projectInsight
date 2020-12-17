@@ -272,13 +272,26 @@
         <div class="view view-cascade blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
 
           <div>
-            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#basicExampleModal">
+            <!-- <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#basicExampleModal">
               <i class="fas fa-columns mt-0">  Update State</i>
-            </button>
+            </button> -->
 
             <!-- <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2" data-toggle="modal" data-target="#fullHeightModalRight">
               <i class="fa fa-filter" style="color: white;" aria-hidden="true"> Filter</i>
             </button> -->
+
+            <form method="POST" action="{{ route('stateUpdate', $event->sid) }}">
+
+            {{ csrf_field() }}
+        
+            <select class="btn btn-outline-white btn-rounded btn-sm px-2" name="state" id="state" onchange="this.form.submit()">
+              <option value="" disabled selected>Update State</option>
+              <option class="text-dark" value="0">0 - Ignore</option>
+              <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
+              <option class="text-dark" value="2">2 - Active</option>
+            </select>
+
+            </form>
 
           </div>
 
@@ -292,9 +305,9 @@
 
         <div class="px-4">
 
-        	<form method="POST" action="{{ route('stateUpdate', $event->sid) }}">
+        	<!-- <form method="POST" action="{{ route('stateUpdate', $event->sid) }}">
 
-        		{{ csrf_field() }}
+        		{{ csrf_field() }} -->
 
             <table class="table table-borderless" id="myTable">
               <thead>
@@ -420,7 +433,7 @@
             </div>
             <!-- Generate rule popup -->
 
-            </form>
+            <!-- </form> -->
 
         </div>
 

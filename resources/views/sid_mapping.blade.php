@@ -168,7 +168,7 @@
 
 	        <div class="px-4">
 
-	            <table class="table table-hover table-border w-100 text-center mx-auto p-3 mt-2" id="myTable">
+	            <table class="table table-hover table-bordered w-100 text-center mx-auto p-3 mt-2" id="myTable">
 	              <thead class="info-color">
 	                <tr class="header">
 	                	<th>No.</th>
@@ -179,31 +179,7 @@
 	                  	<th>Threat Name </th>
 	                  	<th>Threat Class</th>
 	                  	<th>Severity</th>
-	                  	<th>State 
-	                  		<!-- <div class="btn-group dropup">
-		                      <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-		                        <i class="fa fa-sort" aria-hidden="true">
-		                          <span class="sr-only">Toggle Dropdown</span>
-		                        </i>
-
-		                        <div class="dropdown-menu">
-		                          <a id="active" class="dropdown-item" href="#" onclick="sortAscHits()">
-		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Active
-		                          </a>
-		                          <div class="dropdown-divider"></div>
-		                          <a class="dropdown-item" href="#" onclick="sortDescHits()">
-		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Inactive
-		                          </a>
-		                          <div class="dropdown-divider"></div>
-		                          <a class="dropdown-item" href="#" onclick="sortDescHits()">
-		                            <i style="margin-right: 10px;" class="fa fa-caret-right" aria-hidden="true"></i>Ignore
-		                          </a>
-		                        </div>
-
-		                      </a>
-		                    </div> -->
-	                  	</th>
+	                  	<th>State</th>
 	                  	<th>Action</th>
 	                </tr>
 	              </thead>
@@ -244,6 +220,7 @@
 	                  				@endif
 	                  			@endif
 	                  		@endif -->
+
 	                  	</td>
 	                  	<td>
 
@@ -261,30 +238,28 @@
 	                  	<td>
 
 	                  	<div>
-	                  		@if($sids->state == 1)
-		                  		<a style="width:130px;" class="btn btn-md peach-gradient white-text" href="{{ route('sidReview', $sids->sid)}}">Review</a>
-		                  	@else
-		                  		@if($sids->state == 0 || $sids->state == 2)
 
-									<form method="POST" action="{{ route('stateUpdate', $sids->sid) }}">
+							<form method="POST" action="{{ route('stateUpdate', $sids->sid) }}">
 
-	        						{{ csrf_field() }}
-									
-									<div class="dropdown">
-										<select  class="btn btn-md blue-gradient dropdown-toggle px-3" name="state" id="state" onchange="this.form.submit()">
-				                          <option value="" disabled selected>Update State</option>
-				                          <option class="text-dark" value="0">0 - Ignore</option>
-				                          <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
-				                          <option class="text-dark" value="2">2 - Active</option>
-				                        </select>
-			                    	</div>
+    						{{ csrf_field() }}
+							
+							<!-- <div class="dropdown col-md-4"> -->
+							<select  class="btn btn-sm blue-gradient dropdown-toggle px-3" name="state" id="state" onchange="this.form.submit()">
+	                          <option value="" disabled selected>Update State</option>
+	                          <option class="text-dark" value="0">0 - Ignore</option>
+	                          <!-- <option class="dropdown-item" value="1">1 - Inactive</option> -->
+	                          <option class="text-dark" value="2">2 - Active</option>
+	                        </select>
+	                    	<!-- </div> -->
 
-			                    	</form>
+	                    	</form>
 
-		                  		@else
-		                  			<!-- <a style="width:130px;" class="btn btn-default btn-md green accent-3" href="#">Approved</a> -->
-		                  		@endif
-		                  	@endif
+	                    	@if($sids->state == 1)
+	                    	<a style="margin-top: 20px;" href="{{ route('sidReview', $sids->sid)}}">
+	                    		<b> Review <i class="fas fa-angle-double-right"></i></b>
+	                    	</a>
+	                    	@endif
+
 	                  	</div>
 
 	                  </td>

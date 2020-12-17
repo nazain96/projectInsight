@@ -1,0 +1,12 @@
+1. Introduction
+-purpose
+-overview
+-document
+
+2. System Overview
+- Product Function - diagram
+- User Characteristic - Analyst
+- Constraint (optional)
+- Assumptions and Dependencies (optional)
+
+3. User Interface Design
